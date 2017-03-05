@@ -1,0 +1,12 @@
+<section class="">
+    <div class="" ng-repeat="articleItem in articlesCtrl.getRootArticlesItems()">
+        <div class="">
+            <img ng-src="{{articleItem.photo}}"/>
+        </div>
+        <h3 ng-bind="articleItem.header"></h3>
+        <div class="">
+            <p ng-bind="articleItem.paragraph"></p>
+        </div>
+        <a class="" href="#">read more</a>
+    </div>
+</section>

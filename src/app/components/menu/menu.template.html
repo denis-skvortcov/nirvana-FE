@@ -1,0 +1,17 @@
+<div>
+    <ul class="menu">
+        <li class="menu__item" ng-repeat="menuItem in menuCtrl.getRootMenuItems()">
+            <a class="menu__item__caption" href="#" ng-bind="menuItem.caption"></a>
+            <div ng-include="'menu-items.template.html'" class="menu__item__wrapper"></div>
+        </li>
+    </ul>
+
+    <script type="text/ng-template" id="menu-items.template.html">
+        <ul class="menu__item__sub">
+            <li class="menu__item__sub__item" ng-repeat="menuItem in menuCtrl.getMenuItemSubItems(menuItem)">
+                <a href="#" ng-bind="menuItem.caption"></a>
+                <div ng-if="menuCtrl.isHasChildren(menuItem)" ng-include="'menu-items.template.html'"></div>
+            </li>
+        </ul>
+    </script>
+</div>

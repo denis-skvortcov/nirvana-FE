@@ -1,0 +1,28 @@
+.menu-scroll {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(25, 25, 25, 0.8);
+    border-bottom: 1px solid #f6cd53;
+    &__view {
+        visibility: visible;
+    }
+    .menu {
+        margin-bottom: 0;
+        &__item {
+            &__caption {
+                color: #fff;
+                &:hover {
+                    color: $yellow;
+                }
+            }
+            &__wrapper {
+                margin: 0;
+            }
+            &__sub {
+                padding-top: 30px;
+            }
+        }
+    }
+}
