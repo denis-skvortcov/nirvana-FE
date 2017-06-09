@@ -1,0 +1,9 @@
+<div class="slider container" ng-cloak>
+    <button class="container__button-prior fa-angle-left"  ng-click="sliderCtrl.goToPriorPage()" title="prior"></button>
+    <div class="container__content" ng-repeat="slid in sliderCtrl.getViewConfiguration()">
+        <div ng-include="sliderCtrl.slideContentTemplate"></div>
+    </div>
+    <button class="container__button-first" ng-click="sliderCtrl.goToFirstPage()" ng-hide="sliderCtrl.isFirstPage" title="first">start</button>
+    <button class="container__button-last" ng-click="sliderCtrl.goToLastPage()" ng-hide="sliderCtrl.isLastPage" title="last">last</button>
+    <button class="container__button-next fa-angle-right" ng-click="sliderCtrl.goToNextPage()" title="next"></button>
+</div>

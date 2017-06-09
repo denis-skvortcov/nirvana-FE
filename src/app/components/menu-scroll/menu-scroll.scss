@@ -5,6 +5,7 @@
     padding: 20px 0;
     background-color: rgba(25, 25, 25, 0.8);
     border-bottom: 1px solid #f6cd53;
+    z-index: 999;
     &__view {
         visibility: visible;
     }
@@ -14,14 +15,12 @@
             &__caption {
                 color: #fff;
                 &:hover {
-                    color: $yellow;
+                    color: $menu_yellow;
                 }
             }
             &__wrapper {
-                margin: 0;
             }
             &__sub {
-                padding-top: 30px;
             }
         }
     }

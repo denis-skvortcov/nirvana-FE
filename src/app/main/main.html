@@ -2,78 +2,42 @@
     <!--________________________________________________HEADER_______________________________________________________-->
     <header class="header">
         <div class="container">
-        <nrv-menu></nrv-menu>
+            <nrv-menu class="mainMenu" menu-name="'mainMenu'" level="'0'" S></nrv-menu>
         </div>
         <div class="logotype">
-            <img src="../../assets/img/logotype.jpg">
+            <img class="logotype-img" src="../../assets/img/logotype.jpg">
         </div>
         <div>
             <nrv-menu-scroll class="menu-scroll-none"></nrv-menu-scroll>
-        </>
+        </div>
     </header>
     <!--________________________________________________MAIN_________________________________________________________-->
-    <main>
-        <!--____________________________________________PAGE1________________________________________________________-->
-       <div class="page1">
-            <h1>hello</h1>
-           <nrv-articles article-id="1"></nrv-articles>
-        </div>
-        <!--____________________________________________PAGE2________________________________________________________-->
-        <div class="page2">
-            <h2>main services</h2>
-            <div class="main-services"></div>
-            <nrv-articles article-id="2"></nrv-articles>
-        </div>
-        <!--____________________________________________PAGE3________________________________________________________-->
-        <div class="page3">
-            <h2>gallery</h2>
-            <div class="menu-gallery"></div>
-            <div class="clearBoth"></div>
-            <div class="gallery"></div>
-            <div class="slider">
-                <div class="bigScrollLeft">
-                    <div class="scrollLeft"></div>
-                </div>
-                <img class="slid-gallery">
-                <div class="bigScrollRight">
-                    <div class="scrollRight"></div>
-                </div>
-            </div>
-        </div>
-    </main>
+    <nrv-page-container></nrv-page-container>
     <!--________________________________________________FOOTER_______________________________________________________-->
-    <footer>
-        <div class="container">
-            <div class="footer">
-                <div class="logotypeFooter">
-                    <img class="imgFooter" src="../../assets/img/logotype.jpg"><br/>
-                    <span>Digital Printing © 2017 · Privacy Policy</span>
+    <footer class="footer container">
+            <div class="footer__logotype">
+                <img class="footer__logotype-img" src="../../assets/img/logotype.jpg"><br/>
+                <span>Digital Printing © 2017 · Privacy Policy</span>
+            </div>
+            <div class="footer__contacts">
+                <address class="footer__contacts-address">9863 - 9867 Mill Road,<br/>Cambridge, MG09 99HT</address>
+                <div>
+                    <span>Phone</span>
+                    <a class="footer__contacts-phone" href="callto:#">+1234567890</a>
                 </div>
-                <div class="contacts">
-                    <address>9863 - 9867 Mill Road,<br/>Cambridge, MG09 99HT</address>
-                    <div class="phone">
-                        <span>Phone</span>
-                        <a href="callto:#">+1234567890</a>
-                    </div>
-                    <div class="fax">
-                        <span>Fax</span>
-                        <a href="callto:#">+1234567890</a>
-                    </div>
-                </div>
-                <div class="news">
-                    <input type="email" placeholder="Signup for mail">
-                    <p>ok</p>
-                    <div class="clearBoth"></div>
-                    <div class="socialNetwork">
-                        <a class="newsTwitter"></a>
-                        <a class="newsGooglePlus"></a>
-                        <a class="newsPinterest"></a>
-                        <a class="newsFicebook"></a>
-                        <a class="newsInstagram"></a>
-
-                    </div>
+                <div>
+                    <span>Fax</span>
+                    <a class="footer__contacts-phone" href="callto:#">+1234567890</a>
                 </div>
             </div>
-        </div>
+            <div class="footer__news">
+                <div class="footer__news__social-network">
+                    <a class="footer__news__social-network-twitter fa-twitter "></a>
+                    <a class="footer__news__social-network-googlePlus fa-google-plus-square"></a>
+                    <a class="footer__news__social-network-pinterest fa-pinterest"></a>
+                    <a class="footer__news__social-network-ficebook fa-facebook-square"></a>
+                    <a class="footer__news__social-network-linkedin fa-linkedin"></a>
+                </div>
+            </div>
     </footer>
 </div>

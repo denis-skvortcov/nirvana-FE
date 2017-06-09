@@ -1,0 +1,43 @@
+<main class="main">
+    <div class="main__page" ng-class="{'page-even': $even, 'page-odd': $odd}"
+         ng-repeat="page in pageContainerCtrl.getPageList()">
+        <h2 class="main__page-title" ng-bind="page.title"></h2>
+        <section class="slider-container" ng-include="page.template"></section>
+    </div>
+</main>
+
+<script type="text/ng-template" id="my-projects.template.html">
+    <nrv-slider group-type="'articles'"
+                group-name="'my-projects'"
+                page-size="3"
+                page-number="0"
+                slide-content-template="'article.my-projects.template.html'">
+    </nrv-slider>
+</script>
+
+<script type="text/ng-template" id="joint-projects.template.html">
+    <nrv-slider group-type="'articles'"
+                group-name="'joint-projects'"
+                page-size="3"
+                page-number="0"
+                slide-content-template="'article.joint-projects.template.html'">
+    </nrv-slider>
+</script>
+
+<script type="text/ng-template" id="gallery.template.html">
+    <nrv-gallery></nrv-gallery>
+</script>
+
+<script type="text/ng-template" id="article.my-projects.template.html">
+    <nrv-article article-id="slid.id"
+                 group-name="sliderCtrl.groupName"
+                 button-class-name="''">
+    </nrv-article>
+</script>
+
+<script type="text/ng-template" id="article.joint-projects.template.html">
+    <nrv-article article-id="slid.id"
+                 group-name="sliderCtrl.groupName"
+                 button-class-name="''">
+    </nrv-article>
+</script>

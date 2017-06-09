@@ -1,0 +1,26 @@
+<div>
+    <div ng-click="galleryCtrl.albumsList">
+        <p>view all gallery > name gallery</p>
+    </div>
+    <div class="container-fluid">
+        <div class="gallery" ng-repeat="galleryElement in galleryCtrl.galleryView">
+            <a class="gallery-link" ng-click="galleryCtrl.eventClickGalleryElement(galleryElement.parentId || galleryElement.id, $index)">
+                <div class="gallery-link__img"
+                     ng-style="{'background-image': 'url(' + galleryElement.path + ')'}"></div>
+            </a>
+        </div>
+        <a class="view-more" href="#">View More</a>
+    </div>
+    <nrv-slider ng-show="galleryCtrl.statusSliderGallery"
+                group-name="galleryCtrl.imageGallery.parentId"
+                group-type="'gallery'"
+                page-size="'1'"
+                page-number="galleryCtrl.imageGallery.index"
+                slide-content-template="'gallery.imageGallery.template.html'">
+    </nrv-slider>
+
+</div>
+
+<script type="text/ng-template" id="gallery.imageGallery.template.html">
+    <nrv-image-gallery image-gallery-id="slid.id" gallery-info-id="sliderCtrl.groupName" button-class-name="''"></nrv-image-gallery>
+</script>

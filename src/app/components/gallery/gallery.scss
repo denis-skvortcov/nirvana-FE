@@ -1,0 +1,55 @@
+.container-fluid {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .gallery {
+        width: 24vw;
+        height: 24vw;
+        overflow: hidden;
+        &-link {
+            width: inherit;
+            height: inherit;
+            display: flex;
+            &:hover {
+                text-decoration: none;
+                background-color: #fff;
+            }
+            &__img {
+                width: inherit;
+                height: inherit;
+                background-color: #191919;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                transition: 0.5s all ease;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+
+        }
+    }
+    &:after {
+
+    }
+}
+.position {
+    position: relative;
+}
+
+.view-more  {
+    display: block;
+    width: 100vw;
+    font-size: 53px;
+    line-height: 53px;
+    text-align: center;
+    color: #fff;
+    background-color: #f6cd53;
+    &:hover {
+        background-color: #fff;
+        color: #f6cd53;
+        text-decoration: none;
+    }
+}

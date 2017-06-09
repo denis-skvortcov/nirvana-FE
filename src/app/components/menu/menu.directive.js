@@ -3,10 +3,11 @@ export default function MenuDirective() {
         templateUrl: './app/components/menu/menu.template.html',
         controller: 'MenuController',
         controllerAs: 'menuCtrl',
-        scope: {},
-        link
+        bindToController: true,
+        scope: {
+            menuName: '<',
+            level: '<',
+            operator: '<'
+        }
     };
-    function link($scope, $element, $attributes, menuCtrl) {
-        // $element
-    }
 }

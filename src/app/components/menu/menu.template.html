@@ -1,16 +1,16 @@
 <div>
     <ul class="menu">
-        <li class="menu__item" ng-repeat="menuItem in menuCtrl.getRootMenuItems()">
-            <a class="menu__item__caption" href="#" ng-bind="menuItem.caption"></a>
-            <div ng-include="'menu-items.template.html'" class="menu__item__wrapper"></div>
+        <li class="menu-item" ng-mouseover="menuCtrl.getIsHoverRootMenuItem(menuItem.id)" ng-repeat="menuItem in menuCtrl.rootMenuItems">
+            <a class="menu-item__caption" ng-href="{{menuItem.action}}" ng-bind="menuItem.title"></a>
+            <div class="menu-item__wrapper" ng-if="menuCtrl.isHasChildren(menuItem)" ng-include="'menu-items.template.html'"></div>
         </li>
     </ul>
 
     <script type="text/ng-template" id="menu-items.template.html">
-        <ul class="menu__item__sub">
-            <li class="menu__item__sub__item" ng-repeat="menuItem in menuCtrl.getMenuItemSubItems(menuItem)">
-                <a href="#" ng-bind="menuItem.caption"></a>
-                <div ng-if="menuCtrl.isHasChildren(menuItem)" ng-include="'menu-items.template.html'"></div>
+        <ul class="menu-item__sub">
+            <li class="menu-item__sub-item" ng-repeat="menuItem in menuCtrl.getSubMenuItem(menuItem)">
+                <a ng-href="{{menuItem.action}}" ng-bind="menuItem.title"></a>
+                <div class="menu-item__sub-item-wrapper" ng-if="menuCtrl.isHasChildren(menuItem)" ng-include="'menu-items.template.html'"></div>
             </li>
         </ul>
     </script>

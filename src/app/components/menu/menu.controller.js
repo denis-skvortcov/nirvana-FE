@@ -3,26 +3,46 @@ export default class MenuController {
         'ngInject';
         const vm = this;
         Object.assign(vm, {
-            menuList: {}
+            menu,
+            mainMenu: {},
+            subMenuStatus: {},
+            subMenu: []
         });
 
         // TODO: move to separate method
-        menu.getMenu().then(function(list) {
-            vm.menuList = list;
-            return list;
+        menu.getMenu(vm.menuName, vm.level).then((result) => {
+            vm.mainMenu = result;
+            return result;
         });
     }
 
-    getRootMenuItems() {
+    get rootMenuItems() {
         const vm = this;
-        return Object.keys(vm.menuList).map((menuItemName) => vm.menuList[menuItemName]);
+        return vm.mainMenu;
     }
 
-    getMenuItemSubItems(parentMenuItem) {
-        return Object.values(parentMenuItem).filter((menuItemName) => angular.isObject(menuItemName));
+    getIsHoverRootMenuItem(parentMenuId) {
+        const vm = this;
+        const operator = 'more-or-equal';
+        if (!vm.subMenuStatus[parentMenuId]) {
+            vm.subMenuStatus[parentMenuId] = true;
+            vm.menu.getSubMenu(vm.menuName, operator, parentMenuId).then((result) => {
+                if (result.length === 0) {
+                    return;
+                }
+                vm.subMenu[parentMenuId] = result;
+                return result;
+            });
+        }
+    }
+
+    getSubMenuItem(menuItem) {
+        const vm = this;
+        return !menuItem.parentId && vm.subMenu[menuItem.id] || menuItem[menuItem.id];
     }
 
     isHasChildren(menuItem) {
-        return Object.values(menuItem).find((item) => angular.isObject(item));
+        const vm = this;
+        return !!vm.getSubMenuItem(menuItem);
     }
 }

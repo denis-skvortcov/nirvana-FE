@@ -1,7 +1,3 @@
-$gray: #4c4c4c;
-$yellow: #f1cf69;
-$black: #191919;
-$time: 0.3s;
 .menu {
     font-size: 19px;
     line-height: 23px;
@@ -10,19 +6,19 @@ $time: 0.3s;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-    &__item {
+    &-item {
         @extend .disk-none;
         padding: 0 40px;
         &__caption {
-            color: $gray;
+            color: $white;
             &:hover {
-                color: $yellow;
+                color: $menu_yellow;
                 text-decoration: none;
             }
         }
         &__wrapper {
+            top: 53px;
             position: relative;
-            margin-top: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -30,19 +26,22 @@ $time: 0.3s;
             transition-duration: $time;
             transform: scaleY(0);
             transition-timing-function: linear;
+            box-sizing: content-box;
         }
         &:hover &__wrapper {
             transform: scaleY(1);
         }
         &__sub {
-            visibility: hidden;
             position: absolute;
             transition-duration: $time;
-            &__item {
+            border: solid 2px $black;
+            top: -23px;
+            &-item {
                 @extend .disk-none;
                 padding: 0 40px;
-                background-color: $yellow;
+                background-color: $menu_yellow;
                 text-align: center;
+                white-space: nowrap;
                 a {
                     color: $gray;
                     opacity: 0;
@@ -50,23 +49,25 @@ $time: 0.3s;
                     transition-duration: $time;
                     transition-timing-function: linear;
                 }
+                &-wrapper {
+                    display: none;
+                    left: calc(40px + 100%);
+                    position: relative;
+                }
                 &:hover {
                     background-color: $black;
                 }
                 &:hover a {
                     transition-delay: 0s;
                     transition-duration: 0s;
-                    color: $yellow;
+                    color: $menu_yellow;
+                }
+                &:hover :last-child {
+                    display: block;
                 }
             }
-            &:hover {
-                //visibility: visible;
-            }
         }
-        &:hover &__sub {
-            visibility: visible;
-        }
-        &:hover &__sub__item a {
+        &:hover &__sub-item a {
             opacity: 1;
         }
     }

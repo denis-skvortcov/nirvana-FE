@@ -1,0 +1,6 @@
+<div class="article">
+    <div class="article-img" ng-style="{'background-image': 'url(' + articleCtrl.articleData.path + ')'}"></div>
+    <h3 class="article-title" ng-bind="articleCtrl.articleData.title"></h3>
+    <p class="article-paragraph" ng-bind="articleCtrl.articleData.paragraph"></p>
+    <a class="article-button" ng-href="{{articleCtrl.articleData.action}}">read more</a>
+</div>

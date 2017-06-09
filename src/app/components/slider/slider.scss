@@ -1,0 +1,59 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+
+nrv-slider .container {
+    position: relative;
+    display: flex;
+    & div:last-of-type {
+        padding: 0;
+    }
+    &__content {
+        padding: 0 20px 0 0;
+        width: 33%;
+        text-align: left;
+    }
+    &__button-prior, &__button-next, &__button-last, &__button-first {
+        visibility: visible;
+        font-family: "FontAwesome", sans-serif;
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        &:focus {
+            outline: none;
+        }
+    }
+    &__button-prior, &__button-next {
+        top: 50%;
+        font-size: 200px;
+    }
+    &__button-last, &__button-first {
+        bottom: -50px;
+        margin: 0 10px;
+        font-size: 60px;
+    }
+    &__button-prior {
+        left: -80px;
+        &:before {
+            content: "\f104";
+        }
+    }
+    &__button-next {
+        right: -80px;
+        &:before {
+            content: "\f105";
+        }
+    }
+    &__button-last {
+        left: 60%;
+        &:before {
+            content: "\f101";
+        }
+    }
+    &__button-first {
+        right: 60%;
+        &:after {
+            content: "\f100";
+        }
+    }
+}

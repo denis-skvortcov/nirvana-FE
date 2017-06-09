@@ -36,26 +36,31 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
 
 //___________________________________________my css properties__________________________________________________________
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     display: block;
 }
 
+@import url(//fonts.googleapis.com/css?family=Roboto:100,300,300italic,100italic,400,500|Pacifico);
+
 * {
 
-     margin: 0;
-     padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
 
 .disk-none {
     list-style: none;
 }
 
 body {
-    font: 300 15px/24px "Roboto", sans-serif;
+    font: 300 15px/24px 'Roboto', sans-serif;
     color: #fff;
+    background-color: #191919;
 }
 
 .container {
@@ -71,14 +76,26 @@ body {
     padding-top: 49px;
     background-image: url(../assets/img/parallax.jpg);
     background-size: auto 120%;
-    background-position-y: -322px;
     background-repeat: no-repeat;
+}
+
+.mainMenu {
+    .menu {
+        &-item {
+            &__caption {
+                color: $gray;
+            }
+            &__caption:hover {
+                color: $yellow;
+            }
+        }
+    }
 }
 
 .menu-scroll-none {
     display: block;
     visibility: hidden;
-    &__view{
+    &__view {
         visibility: visible;
     }
 }
@@ -90,41 +107,98 @@ body {
     height: 507px;
     margin: 0 auto;
     box-sizing: content-box;
-    img {
+    &-img {
         width: 100%;
     }
 }
 
-.page1 {
-    margin: -56px 0;
-    background-color: #191919;
-    text-align: center;
-}
-
-h1 {
-    font-size: 320px;
-    line-height: 350px;
-    font-weight: 100;
-    text-transform: lowercase;
-
-}
-.page2 {
-    background-color: #f6cd53;
-    text-align: center;
-}
-
-h2 {
-    font-size: 110px;
-    line-height: 140px;
-    font-weight: 300;
-    text-transform: lowercase;
-
-}
-
-.page3 {
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     background: #191919;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    border: 0;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    &__logotype {
+        width: 370px;
+        height: 162px;
+        margin-left: 30px;
+        &-img {
+            height: inherit;
+            margin-top: -20px;
+        }
+    }
+    &__contacts {
+        width: 270px;
+        margin-left: 230px;
+        margin-top: 66px;
+        color: #fff;
+        font: 300 15px/24px "Roboto", sans-serif;
+        &-address {
+            color: #fff;
+            font: 300 15px/24px "Roboto", sans-serif;
+            margin: 0;
+        }
+        &-phone {
+            color: inherit;
+            text-decoration: none;
+            &:hover {
+                color: #f6cd53;
+            }
+        }
+    }
+    &__news {
+        width: 270px;
+        margin-top: 58px;
+        margin-left: 30px;
+        &__social-network {
+            margin-top: 40px;
+            font-family: "FontAwesome", sans-serif;
+            font-size: 20px;
+            line-height: 20px;
+            &-twitter, &-googlePlus, &-pinterest, &-ficebook, &-linkedin {
+                margin-left: 9px;
+            }
+
+            &-twitter {
+                color: #fff;
+                &:hover {
+                    color: #f6cd53;
+                    text-decoration: none;
+                }
+            }
+
+            &-googlePlus {
+                color: #fff;
+                &:hover {
+                    color: #f6cd53;
+                    text-decoration: none;
+                }
+            }
+
+            &-pinterest {
+                color: #fff;
+                &:hover {
+                    color: #f6cd53;
+                    text-decoration: none;
+                }
+            }
+
+            &-ficebook {
+                color: #fff;
+                &:hover {
+                    color: #f6cd53;
+                    text-decoration: none;
+                }
+            }
+
+            &-linkedin {
+                color: #fff;
+                &:hover {
+                    color: #f6cd53;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
 }
