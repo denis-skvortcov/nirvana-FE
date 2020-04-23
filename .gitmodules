@@ -1,0 +1,4 @@
+[submodule "src/kt"]
+	path = src/kt
+	url = git@github.com:denis-skvortcov/test-kt-ukraine.git
+	branch = different
