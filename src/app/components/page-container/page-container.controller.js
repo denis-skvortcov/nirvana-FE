@@ -4,6 +4,7 @@ export default class PageContainerController {
         const vm = this;
         Object.assign(vm, {
             pages: {}
+			test: 'testText',
         });
 
         // TODO: move to separate method
